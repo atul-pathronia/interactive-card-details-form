@@ -40,12 +40,6 @@ main {
     justify-content: center;
     width: 90%;
     margin: 5rem auto; }
-    @media (min-width: 350px) {
-      main .bottom {
-        margin: 7rem auto; } }
-    @media (min-width: 400px) {
-      main .bottom {
-        margin: 9rem auto; } }
     main .bottom form {
       display: flex;
       align-items: center;
