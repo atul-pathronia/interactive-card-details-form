@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+  height: 100vh; }
+
+main {
+  height: 100vh;
+  max-width: 144rem;
+  margin: 0 auto;
+  grid-template-rows: 1fr 2fr; }
+  main .top {
+    background-color: #21092f;
+    height: 33.33%;
+    position: relative; }
+    main .top img {
+      width: 80%;
+      margin: 0 auto;
+      display: block; }
+    main .top img.card-back {
+      position: absolute;
+      top: 15%;
+      right: 5%; }
+    main .top img.card-front {
+      position: absolute;
+      top: 60%;
+      left: 5%; }
+  main .bottom {
+    background-color: white;
+    height: 66.66%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    margin: 5rem auto; }
+    @media (min-width: 350px) {
+      main .bottom {
+        margin: 7rem auto; } }
+    @media (min-width: 400px) {
+      main .bottom {
+        margin: 9rem auto; } }
+    main .bottom form {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 2em; }
+      main .bottom form .form-group {
+        width: 100%; }
+        main .bottom form .form-group label {
+          text-transform: uppercase;
+          display: block;
+          margin-bottom: 0.5rem;
+          font-size: 1.2rem;
+          letter-spacing: 0.2rem; }
+        main .bottom form .form-group input {
+          width: 100%;
+          padding: 1rem 0;
+          border-radius: 1rem;
+          border: 0.1rem solid #8e8593;
+          outline: none;
+          font-size: 1.2rem;
+          padding-left: 1rem; }
+          main .bottom form .form-group input::placeholder {
+            padding-left: 1rem;
+            font-size: 1.6rem;
+            color: #dedddf;
+            font-family: "Space Grotesk", sans-serif; }
+        main .bottom form .form-group .card-details {
+          display: grid;
+          grid-template-columns: 1fr 1fr 2fr;
+          gap: 1rem; }
+      main .bottom form .btnSubmit {
+        width: 100%;
+        padding: 1rem 0;
+        border-radius: 1rem;
+        background-color: #21092f;
+        color: white;
+        font-size: 1.8rem;
+        letter-spacing: 0.1rem;
+        border: none;
+        outline: none; }

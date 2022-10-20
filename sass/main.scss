@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+
+$Linear-gradient-active-input-border: hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
+$Red-input-errors: hsl(0, 100%, 66%);
+$White: hsl(0, 0%, 100%);
+$Light-grayish-violet: hsl(270, 3%, 87%);
+$Dark-grayish-violet: hsl(279, 6%, 55%);
+$Very-dark-violet: hsl(278, 68%, 11%);
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+  height: 100vh;
+}
+
+main {
+  height: 100vh;
+  max-width: 144rem;
+  margin: 0 auto;
+  grid-template-rows: 1fr 2fr;
+
+  .top {
+    background-color: $Very-dark-violet;
+    height: 33.33%;
+    position: relative;
+    img {
+      width: 80%;
+      margin: 0 auto;
+      display: block;
+    }
+
+    img.card-back {
+      position: absolute;
+      top: 15%;
+      right: 5%;
+    }
+
+    img.card-front {
+      position: absolute;
+      top: 60%;
+      left: 5%;
+    }
+  }
+
+  .bottom {
+    background-color: $White;
+    height: 66.66%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    margin: 5rem auto;
+    @media (min-width: 350px) {
+      margin: 7rem auto;
+    }
+    @media (min-width: 400px) {
+      margin: 9rem auto;
+    }
+
+    form {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 2em;
+
+      .form-group {
+        width: 100%;
+
+        label {
+          text-transform: uppercase;
+          display: block;
+          margin-bottom: 0.5rem;
+          font-size: 1.2rem;
+          letter-spacing: 0.2rem;
+        }
+
+        input {
+          width: 100%;
+          padding: 1rem 0;
+          border-radius: 1rem;
+          border: 0.1rem solid $Dark-grayish-violet;
+          outline: none;
+          font-size: 1.2rem;
+          padding-left: 1rem;
+          &::placeholder {
+            padding-left: 1rem;
+            font-size: 1.6rem;
+            color: $Light-grayish-violet;
+            font-family: "Space Grotesk", sans-serif;
+          }
+        }
+        .card-details {
+          display: grid;
+          grid-template-columns: 1fr 1fr 2fr;
+          gap: 1rem;
+        }
+      }
+
+      .btnSubmit {
+        width: 100%;
+        padding: 1rem 0;
+        border-radius: 1rem;
+        background-color: $Very-dark-violet;
+        color: $White;
+        font-size: 1.8rem;
+        letter-spacing: 0.1rem;
+        border: none;
+        outline: none;
+      }
+    }
+  }
+}
