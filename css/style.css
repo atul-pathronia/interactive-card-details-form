@@ -27,7 +27,7 @@ body {
   height: 100vh; }
 
 main {
-  height: 100vh; }
+  min-height: 100vh; }
 
 .container {
   display: grid;
@@ -122,8 +122,6 @@ main {
     display: flex;
     flex-direction: column;
     gap: 1rem; }
-    .bottom .input-card-details form .form-group {
-      margin-bottom: 1.5rem; }
     .bottom .input-card-details form label {
       display: block;
       font-size: 1.2rem;
