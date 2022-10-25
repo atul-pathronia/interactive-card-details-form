@@ -6,215 +6,109 @@
 
 html {
   font-size: 62.5%; }
+  @media (min-width: 321px) {
+    html {
+      font-size: 68.75%; } }
+  @media (min-width: 376px) {
+    html {
+      font-size: 75%; } }
+  @media (min-width: 426px) {
+    html {
+      font-size: 81.25%; } }
+  @media (min-width: 769px) {
+    html {
+      font-size: 87.5%; } }
+  @media (min-width: 1025px) {
+    html {
+      font-size: 93.75%; } }
 
 body {
   font-family: "Space Grotesk", sans-serif;
   height: 100vh; }
 
-.hidden {
-  display: none; }
-
 main {
+  height: 100vh; }
+
+.container {
+  display: grid;
+  grid-template-rows: 1fr 2fr;
   height: 100vh;
-  max-width: 144rem;
-  margin: 0 auto;
-  position: relative; }
-  @media (min-width: 700px) {
-    main {
-      display: grid;
-      grid-template-columns: 1fr 2fr; } }
+  width: 100%; }
 
 .top {
-  background-color: #21092f;
-  height: 30%; }
-  @media (min-width: 700px) {
-    .top {
-      height: 100%; } }
-  .top img {
+  background-image: url("/images/bg-main-mobile.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%; }
+
+.card {
+  width: 90%;
+  margin: 2rem auto;
+  position: relative;
+  height: 100%; }
+  .card-front {
     width: 80%;
-    margin: 0 auto; }
-  .top .card-back {
     position: absolute;
-    top: 5%;
-    right: 5%;
-    width: 80%; }
-    @media (min-width: 700px) {
-      .top .card-back {
-        left: 15%;
-        top: 55%;
-        width: 50%; } }
-    @media (min-width: 800px) {
-      .top .card-back {
-        width: 40%; } }
-    @media (min-width: 900px) {
-      .top .card-back {
-        width: 30%; } }
-    .top .card-back img {
+    top: 50%;
+    z-index: 2; }
+    .card-front img {
       width: 100%; }
-    .top .card-back .card-cvv {
-      position: absolute;
-      right: 10%;
-      top: 45%;
-      letter-spacing: 0.2rem;
-      font-size: 1.5rem; }
-  .top .card-front {
-    position: absolute;
-    top: 20%;
-    left: 5%;
-    width: 80%;
-    box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2); }
-    @media (min-width: 501px) {
-      .top .card-front {
-        top: 25%; } }
-    @media (min-width: 700px) {
-      .top .card-front {
-        top: 15%;
-        width: 50%; } }
-    @media (min-width: 800px) {
-      .top .card-front {
-        width: 40%; } }
-    @media (min-width: 900px) {
-      .top .card-front {
-        width: 30%; } }
-    .top .card-front img {
-      width: 100%; }
-    .top .card-front .card-front-details {
-      color: white;
+    .card-front-details {
       position: absolute;
       top: 0;
       left: 0;
-      height: 100%;
       width: 100%;
-      padding: 2rem;
+      height: 100%;
+      padding: 1rem;
       display: flex;
       flex-direction: column;
-      justify-content: space-between; }
-      .top .card-front .card-front-details .circles {
+      align-items: flex-start;
+      justify-content: space-around; }
+      .card-front-details .card-front-circle {
         display: flex;
         align-items: center;
-        gap: 1rem; }
-        .top .card-front .card-front-details .circles .dark-cirle {
-          background-color: white;
-          width: 3rem;
-          height: 3rem;
-          border-radius: 50%; }
-        .top .card-front .card-front-details .circles .light-circle {
-          width: 1.5rem;
-          height: 1.5rem;
+        gap: 0.5rem; }
+        .card-front-details .card-front-circle-dark {
+          width: 2rem;
+          height: 2rem;
+          border-radius: 50%;
+          background-color: white; }
+        .card-front-details .card-front-circle-light {
+          width: 1rem;
+          height: 1rem;
           border-radius: 50%;
           border: 0.1px solid white; }
-      .top .card-front .card-front-details .card-number {
-        font-size: 1.6rem;
-        text-align: center;
-        font-weight: 100;
-        letter-spacing: 0.2rem; }
-      .top .card-front .card-front-details-name-and-cvv {
-        display: flex;
-        justify-content: space-between; }
-        .top .card-front .card-front-details-name-and-cvv .card-name {
-          text-transform: uppercase;
-          font-size: 1.2rem;
-          letter-spacing: 0.2rem; }
-        .top .card-front .card-front-details-name-and-cvv .card-month {
-          margin-right: 0;
-          margin-left: auto; }
-
-.bottom {
-  background-color: white;
-  height: 60%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 90%;
-  margin: 8rem auto; }
-  @media (min-width: 501px) {
-    .bottom {
-      margin-top: 20rem; } }
-  @media (min-width: 700px) {
-    .bottom {
-      max-height: 100%;
-      margin-top: 8rem; } }
-  .bottom-input-container {
-    width: 100%; }
-    @media (min-width: 700px) {
-      .bottom-input-container {
-        width: 50%; } }
-    .bottom-input-container form {
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 2em; }
-      .bottom-input-container form .form-group {
-        width: 100%;
-        position: relative;
-        margin-bottom: 0.5rem; }
-        .bottom-input-container form .form-group label {
-          text-transform: uppercase;
-          display: block;
-          margin-bottom: 0.5rem;
-          font-size: 1.2rem;
-          letter-spacing: 0.2rem; }
-        .bottom-input-container form .form-group input {
-          width: 100%;
-          padding: 1rem 0;
-          border-radius: 1rem;
-          border: 0.1rem solid #8e8593;
-          outline: none;
-          font-size: 1.2rem;
-          padding-left: 1rem; }
-          .bottom-input-container form .form-group input::placeholder {
-            padding-left: 1rem;
-            font-size: 1.6rem;
-            color: #dedddf;
-            font-family: "Space Grotesk", sans-serif; }
-        .bottom-input-container form .form-group .card-details {
-          display: grid;
-          grid-template-columns: 1fr 1fr 2fr;
-          gap: 1rem; }
-        .bottom-input-container form .form-group .error {
-          color: #ff5252;
-          position: absolute;
-          left: 1rem;
-          bottom: -1.5rem; }
-      .bottom-input-container form .btnSubmit {
-        width: 100%;
-        padding: 1rem 0;
-        border-radius: 1rem;
-        background-color: #21092f;
+      .card-front-details .card-front-card-number {
         color: white;
-        font-size: 1.8rem;
-        letter-spacing: 0.1rem;
-        border: none;
-        outline: none;
-        cursor: pointer; }
-  .bottom-thank-you-container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    padding: 2rem 0;
-    margin-top: 5rem; }
-    .bottom-thank-you-container h4 {
-      font-size: 2.5rem;
-      text-transform: uppercase;
-      letter-spacing: 0.3rem; }
-    .bottom-thank-you-container span {
-      color: #8e8593;
-      font-size: 1.8rem;
-      text-align: center; }
-    .bottom-thank-you-container .btnSubmit {
+        text-align: center;
+        width: 100%;
+        letter-spacing: 0.2rem; }
+      .card-front-details .card-front-cardholder-name-month-year {
+        width: 100%;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between; }
+        .card-front-details .card-front-cardholder-name-month-year .card-front-card-month {
+          margin-left: auto; }
+  .card-back {
+    width: 80%;
+    position: absolute;
+    right: 1rem;
+    z-index: 1; }
+    .card-back img {
+      width: 100%; }
+    .card-back-details {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
-      padding: 1rem 0;
-      border-radius: 1rem;
-      background-color: #21092f;
-      color: white;
-      font-size: 1.8rem;
-      letter-spacing: 0.1rem;
-      border: none;
-      outline: none; }
-  .bottom .hidden {
-    display: none; }
+      height: 100%;
+      padding: 1rem; }
+      .card-back-details-cvv {
+        position: absolute;
+        right: 0;
+        top: 43%;
+        right: 13%;
+        color: white; }

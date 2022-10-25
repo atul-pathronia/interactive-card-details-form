@@ -17,86 +17,34 @@
   </head>
   <body>
     <main>
-      <section class="top">
-        <div class="card-back">
-          <img src="/images/bg-card-back.png" alt="card-back" />
-          <span class="card-cvv">000</span>
-        </div>
-        <div class="card-front">
-          <img src="/images/bg-card-front.png" alt="card-front" />
-          <div class="card-front-details">
-            <div class="circles">
-              <div class="dark-cirle"></div>
-              <div class="light-circle"></div>
-            </div>
-            <h4 class="card-number">0000 0000 0000 0000</h4>
-            <div class="card-front-details-name-and-cvv">
-              <span class="card-name">Atul Pathronia</span>
-              <span class="card-month">00/ </span>
-              <span class="card-year"> 00</span>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="bottom">
-        <div class="bottom-input-container">
-          <form>
-            <div class="form-group">
-              <label>cardholder name</label>
-              <input
-                type="text"
-                placeholder="e.g. Jane Appleseed"
-                name="card-name"
-                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                maxlength="30"
-              />
-            </div>
-            <div class="form-group">
-              <label>card number</label>
-              <input
-                type="text"
-                placeholder="e.g. 1234 5678 9123 0000"
-                name="card-number"
-                maxlength="16"
-                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-              />
-            </div>
-            <div class="form-group">
-              <label>Exp. Date (MM/YY)</label>
-              <div class="card-details">
-                <input
-                  type="number"
-                  placeholder="MM"
-                  name="card-month"
-                  maxlength="2"
-                  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                />
-                <input
-                  type="number"
-                  placeholder="YY"
-                  name="card-year"
-                  maxlength="2"
-                  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                />
-                <input
-                  type="number"
-                  placeholder="e.g. 123"
-                  name="card-cvv"
-                  maxlength="3"
-                  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                />
+      <div class="container">
+        <section class="top">
+          <div class="card">
+            <div class="card-front">
+              <img src="/images/bg-card-front.png" alt="" />
+              <div class="card-front-details">
+                <div class="card-front-circle">
+                  <div class="card-front-circle-dark"></div>
+                  <div class="card-front-circle-light"></div>
+                </div>
+                <h3 class="card-front-card-number">0000 0000 0000 0000</h3>
+                <div class="card-front-cardholder-name-month-year">
+                  <h4 class="card-front-cardholder-name">Atul Pathronia</h4>
+                  <span class="card-front-card-month">00</span>/
+                  <span class="card-front-card-year">00</span>
+                </div>
               </div>
             </div>
-            <button type="submit" class="btnSubmit">Confirm</button>
-          </form>
-        </div>
-        <div class="bottom-thank-you-container hidden">
-          <img src="/images/icon-complete.svg" alt="" />
-          <h4>Thank You!</h4>
-          <span>We've added your card details</span>
-          <button class="btnSubmit">Continue</button>
-        </div>
-      </section>
+            <div class="card-back">
+              <img src="/images/bg-card-back.png" alt="" />
+              <div class="card-back-details">
+                <span class="card-back-details-cvv">000</span>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="bottom"></section>
+      </div>
     </main>
   </body>
 </html>
