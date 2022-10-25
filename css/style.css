@@ -11,101 +11,152 @@ body {
   font-family: "Space Grotesk", sans-serif;
   height: 100vh; }
 
+.hidden {
+  display: none; }
+
 main {
   height: 100vh;
   max-width: 144rem;
   margin: 0 auto;
-  grid-template-rows: 1fr 2fr;
   position: relative; }
-  main .top {
-    background-color: #21092f;
-    height: 30%; }
-    main .top img {
-      width: 80%;
-      margin: 0 auto; }
-    main .top .card-back {
+  @media (min-width: 700px) {
+    main {
+      display: grid;
+      grid-template-columns: 1fr 2fr; } }
+
+.top {
+  background-color: #21092f;
+  height: 30%; }
+  @media (min-width: 700px) {
+    .top {
+      height: 100%; } }
+  .top img {
+    width: 80%;
+    margin: 0 auto; }
+  .top .card-back {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    width: 80%; }
+    @media (min-width: 700px) {
+      .top .card-back {
+        left: 15%;
+        top: 55%;
+        width: 50%; } }
+    @media (min-width: 800px) {
+      .top .card-back {
+        width: 40%; } }
+    @media (min-width: 900px) {
+      .top .card-back {
+        width: 30%; } }
+    .top .card-back img {
+      width: 100%; }
+    .top .card-back .card-cvv {
       position: absolute;
-      top: 5%;
-      right: 5%;
-      width: 80%; }
-      main .top .card-back img {
-        width: 100%; }
-      main .top .card-back .cvv {
-        position: absolute;
-        top: 45%;
-        right: 10%;
-        width: max-content;
-        height: max-content;
-        letter-spacing: 0.1rem; }
-    main .top .card-front {
+      right: 10%;
+      top: 45%;
+      letter-spacing: 0.2rem;
+      font-size: 1.5rem; }
+  .top .card-front {
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    width: 80%;
+    box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2); }
+    @media (min-width: 501px) {
+      .top .card-front {
+        top: 25%; } }
+    @media (min-width: 700px) {
+      .top .card-front {
+        top: 15%;
+        width: 50%; } }
+    @media (min-width: 800px) {
+      .top .card-front {
+        width: 40%; } }
+    @media (min-width: 900px) {
+      .top .card-front {
+        width: 30%; } }
+    .top .card-front img {
+      width: 100%; }
+    .top .card-front .card-front-details {
+      color: white;
       position: absolute;
-      top: 20%;
-      left: 5%;
-      width: 80%; }
-      main .top .card-front img {
-        width: 100%; }
-      main .top .card-front .card-front-details {
-        color: white;
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        padding: 2rem;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; }
+      .top .card-front .card-front-details .circles {
         display: flex;
-        flex-direction: column;
+        align-items: center;
+        gap: 1rem; }
+        .top .card-front .card-front-details .circles .dark-cirle {
+          background-color: white;
+          width: 3rem;
+          height: 3rem;
+          border-radius: 50%; }
+        .top .card-front .card-front-details .circles .light-circle {
+          width: 1.5rem;
+          height: 1.5rem;
+          border-radius: 50%;
+          border: 0.1px solid white; }
+      .top .card-front .card-front-details .card-number {
+        font-size: 1.6rem;
+        text-align: center;
+        font-weight: 100;
+        letter-spacing: 0.2rem; }
+      .top .card-front .card-front-details-name-and-cvv {
+        display: flex;
         justify-content: space-between; }
-        main .top .card-front .card-front-details .circles {
-          display: flex;
-          align-items: center;
-          gap: 1rem; }
-          main .top .card-front .card-front-details .circles .dark-cirle {
-            background-color: white;
-            width: 3rem;
-            height: 3rem;
-            border-radius: 50%; }
-          main .top .card-front .card-front-details .circles .light-circle {
-            width: 1.5rem;
-            height: 1.5rem;
-            border-radius: 50%;
-            border: 0.1px solid white; }
-        main .top .card-front .card-front-details .card-number {
-          font-size: 1.6rem;
-          text-align: center;
-          font-weight: 100;
+        .top .card-front .card-front-details-name-and-cvv .card-name {
+          text-transform: uppercase;
+          font-size: 1.2rem;
           letter-spacing: 0.2rem; }
-        main .top .card-front .card-front-details-name-and-cvv {
-          display: flex;
-          justify-content: space-between; }
-          main .top .card-front .card-front-details-name-and-cvv .card-holder-name {
-            text-transform: uppercase;
-            font-size: 1.2rem;
-            letter-spacing: 0.2rem; }
-          main .top .card-front .card-front-details-name-and-cvv .card-holder-cvv {
-            font-size: 1rem; }
-  main .bottom {
-    background-color: white;
-    height: 60%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 90%;
-    margin: 8rem auto; }
-    main .bottom form {
+        .top .card-front .card-front-details-name-and-cvv .card-month {
+          margin-right: 0;
+          margin-left: auto; }
+
+.bottom {
+  background-color: white;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  margin: 8rem auto; }
+  @media (min-width: 501px) {
+    .bottom {
+      margin-top: 20rem; } }
+  @media (min-width: 700px) {
+    .bottom {
+      max-height: 100%;
+      margin-top: 8rem; } }
+  .bottom-input-container {
+    width: 100%; }
+    @media (min-width: 700px) {
+      .bottom-input-container {
+        width: 50%; } }
+    .bottom-input-container form {
       display: flex;
       align-items: center;
       flex-direction: column;
       justify-content: space-between;
       gap: 2em; }
-      main .bottom form .form-group {
-        width: 100%; }
-        main .bottom form .form-group label {
+      .bottom-input-container form .form-group {
+        width: 100%;
+        position: relative;
+        margin-bottom: 0.5rem; }
+        .bottom-input-container form .form-group label {
           text-transform: uppercase;
           display: block;
           margin-bottom: 0.5rem;
           font-size: 1.2rem;
           letter-spacing: 0.2rem; }
-        main .bottom form .form-group input {
+        .bottom-input-container form .form-group input {
           width: 100%;
           padding: 1rem 0;
           border-radius: 1rem;
@@ -113,16 +164,21 @@ main {
           outline: none;
           font-size: 1.2rem;
           padding-left: 1rem; }
-          main .bottom form .form-group input::placeholder {
+          .bottom-input-container form .form-group input::placeholder {
             padding-left: 1rem;
             font-size: 1.6rem;
             color: #dedddf;
             font-family: "Space Grotesk", sans-serif; }
-        main .bottom form .form-group .card-details {
+        .bottom-input-container form .form-group .card-details {
           display: grid;
           grid-template-columns: 1fr 1fr 2fr;
           gap: 1rem; }
-      main .bottom form .btnSubmit {
+        .bottom-input-container form .form-group .error {
+          color: #ff5252;
+          position: absolute;
+          left: 1rem;
+          bottom: -1.5rem; }
+      .bottom-input-container form .btnSubmit {
         width: 100%;
         padding: 1rem 0;
         border-radius: 1rem;
@@ -131,4 +187,34 @@ main {
         font-size: 1.8rem;
         letter-spacing: 0.1rem;
         border: none;
-        outline: none; }
+        outline: none;
+        cursor: pointer; }
+  .bottom-thank-you-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 0;
+    margin-top: 5rem; }
+    .bottom-thank-you-container h4 {
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.3rem; }
+    .bottom-thank-you-container span {
+      color: #8e8593;
+      font-size: 1.8rem;
+      text-align: center; }
+    .bottom-thank-you-container .btnSubmit {
+      width: 100%;
+      padding: 1rem 0;
+      border-radius: 1rem;
+      background-color: #21092f;
+      color: white;
+      font-size: 1.8rem;
+      letter-spacing: 0.1rem;
+      border: none;
+      outline: none; }
+  .bottom .hidden {
+    display: none; }

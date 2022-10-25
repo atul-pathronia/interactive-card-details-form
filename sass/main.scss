@@ -22,112 +22,166 @@ body {
   height: 100vh;
 }
 
+.hidden {
+  display: none;
+}
+
 main {
   height: 100vh;
   max-width: 144rem;
   margin: 0 auto;
-  grid-template-rows: 1fr 2fr;
   position: relative;
 
-  .top {
-    background-color: $Very-dark-violet;
-    height: 30%;
+  @media (min-width: 700px) {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+.top {
+  background-color: $Very-dark-violet;
+  height: 30%;
+  @media (min-width: 700px) {
+    height: 100%;
+  }
+  img {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .card-back {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    width: 80%;
+    @media (min-width: 700px) {
+      left: 15%;
+      top: 55%;
+      width: 50%;
+    }
+
+    @media (min-width: 800px) {
+      width: 40%;
+    }
+
+    @media (min-width: 900px) {
+      width: 30%;
+    }
     img {
-      width: 80%;
-      margin: 0 auto;
+      width: 100%;
     }
 
-    .card-back {
+    .card-cvv {
       position: absolute;
-      top: 5%;
-      right: 5%;
-      width: 80%;
-      img {
-        width: 100%;
-      }
+      right: 10%;
+      top: 45%;
+      letter-spacing: 0.2rem;
+      font-size: 1.5rem;
+    }
+  }
 
-      .cvv {
-        position: absolute;
-        top: 45%;
-        right: 10%;
-        width: max-content;
-        height: max-content;
-        letter-spacing: 0.1rem;
-      }
+  .card-front {
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    width: 80%;
+    box-shadow: 0 2rem 5rem rgba($color: #000000, $alpha: 0.2);
+    @media (min-width: 501px) {
+      top: 25%;
+    }
+    @media (min-width: 700px) {
+      top: 15%;
+      width: 50%;
     }
 
-    .card-front {
-      position: absolute;
-      top: 20%;
-      left: 5%;
-      width: 80%;
-      img {
-        width: 100%;
-      }
+    @media (min-width: 800px) {
+      width: 40%;
+    }
 
-      .card-front-details {
-        color: $White;
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        padding: 2rem;
+    @media (min-width: 900px) {
+      width: 30%;
+    }
+    img {
+      width: 100%;
+    }
+
+    .card-front-details {
+      color: $White;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .circles {
         display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-
-        .circles {
-          display: flex;
-          align-items: center;
-          gap: 1rem;
-          .dark-cirle {
-            background-color: $White;
-            width: 3rem;
-            height: 3rem;
-            border-radius: 50%;
-          }
-
-          .light-circle {
-            width: 1.5rem;
-            height: 1.5rem;
-            border-radius: 50%;
-            border: 0.1px solid $White;
-          }
+        align-items: center;
+        gap: 1rem;
+        .dark-cirle {
+          background-color: $White;
+          width: 3rem;
+          height: 3rem;
+          border-radius: 50%;
         }
 
-        .card-number {
-          font-size: 1.6rem;
-          text-align: center;
-          font-weight: 100;
+        .light-circle {
+          width: 1.5rem;
+          height: 1.5rem;
+          border-radius: 50%;
+          border: 0.1px solid $White;
+        }
+      }
+
+      .card-number {
+        font-size: 1.6rem;
+        text-align: center;
+        font-weight: 100;
+        letter-spacing: 0.2rem;
+      }
+
+      &-name-and-cvv {
+        display: flex;
+        justify-content: space-between;
+        .card-name {
+          text-transform: uppercase;
+          font-size: 1.2rem;
           letter-spacing: 0.2rem;
         }
-
-        &-name-and-cvv {
-          display: flex;
-          justify-content: space-between;
-          .card-holder-name {
-            text-transform: uppercase;
-            font-size: 1.2rem;
-            letter-spacing: 0.2rem;
-          }
-          .card-holder-cvv {
-            font-size: 1rem;
-          }
+        .card-month {
+          margin-right: 0;
+          margin-left: auto;
         }
       }
     }
   }
+}
 
-  .bottom {
-    background-color: $White;
-    height: 60%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 90%;
-    margin: 8rem auto;
+.bottom {
+  background-color: $White;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  margin: 8rem auto;
+  @media (min-width: 501px) {
+    margin-top: 20rem;
+  }
+  @media (min-width: 700px) {
+    max-height: 100%;
+    margin-top: 8rem;
+  }
 
+  &-input-container {
+    width: 100%;
+    @media (min-width: 700px) {
+      width: 50%;
+    }
     form {
       display: flex;
       align-items: center;
@@ -137,7 +191,8 @@ main {
 
       .form-group {
         width: 100%;
-
+        position: relative;
+        margin-bottom: 0.5rem;
         label {
           text-transform: uppercase;
           display: block;
@@ -166,6 +221,12 @@ main {
           grid-template-columns: 1fr 1fr 2fr;
           gap: 1rem;
         }
+        .error {
+          color: $Red-input-errors;
+          position: absolute;
+          left: 1rem;
+          bottom: -1.5rem;
+        }
       }
 
       .btnSubmit {
@@ -178,7 +239,46 @@ main {
         letter-spacing: 0.1rem;
         border: none;
         outline: none;
+        cursor: pointer;
       }
     }
+  }
+
+  &-thank-you-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 0;
+    margin-top: 5rem;
+
+    h4 {
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.3rem;
+    }
+
+    span {
+      color: $Dark-grayish-violet;
+      font-size: 1.8rem;
+      text-align: center;
+    }
+
+    .btnSubmit {
+      width: 100%;
+      padding: 1rem 0;
+      border-radius: 1rem;
+      background-color: $Very-dark-violet;
+      color: $White;
+      font-size: 1.8rem;
+      letter-spacing: 0.1rem;
+      border: none;
+      outline: none;
+    }
+  }
+  .hidden {
+    display: none;
   }
 }

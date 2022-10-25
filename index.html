@@ -12,7 +12,7 @@
       href="./images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="/css/style.css" />
-    <script src="/script/script.js"></script>
+    <script defer src="/script/script.js"></script>
     <title>Frontend Mentor | Interactive card details form</title>
   </head>
   <body>
@@ -20,7 +20,7 @@
       <section class="top">
         <div class="card-back">
           <img src="/images/bg-card-back.png" alt="card-back" />
-          <span class="cvv">000</span>
+          <span class="card-cvv">000</span>
         </div>
         <div class="card-front">
           <img src="/images/bg-card-front.png" alt="card-front" />
@@ -31,32 +31,71 @@
             </div>
             <h4 class="card-number">0000 0000 0000 0000</h4>
             <div class="card-front-details-name-and-cvv">
-              <span class="card-holder-name">Atul Pathronia</span>
-              <span class="card-holder-cvv">00/00</span>
+              <span class="card-name">Atul Pathronia</span>
+              <span class="card-month">00/ </span>
+              <span class="card-year"> 00</span>
             </div>
           </div>
         </div>
       </section>
       <section class="bottom">
-        <form>
-          <div class="form-group">
-            <label>cardholder name</label>
-            <input type="text" placeholder="e.g. Jane Appleseed" />
-          </div>
-          <div class="form-group">
-            <label>card name</label>
-            <input type="number" placeholder="e.g. 1234 5678 9123 0000" />
-          </div>
-          <div class="form-group">
-            <label>Exp. Date (MM/YY)</label>
-            <div class="card-details">
-              <input type="number" placeholder="MM" />
-              <input type="number" placeholder="YY" />
-              <input type="number" placeholder="e.g. 123" />
+        <div class="bottom-input-container">
+          <form>
+            <div class="form-group">
+              <label>cardholder name</label>
+              <input
+                type="text"
+                placeholder="e.g. Jane Appleseed"
+                name="card-name"
+                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                maxlength="30"
+              />
             </div>
-          </div>
-          <button type="submit" class="btnSubmit">Confirm</button>
-        </form>
+            <div class="form-group">
+              <label>card number</label>
+              <input
+                type="text"
+                placeholder="e.g. 1234 5678 9123 0000"
+                name="card-number"
+                maxlength="16"
+                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+              />
+            </div>
+            <div class="form-group">
+              <label>Exp. Date (MM/YY)</label>
+              <div class="card-details">
+                <input
+                  type="number"
+                  placeholder="MM"
+                  name="card-month"
+                  maxlength="2"
+                  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                />
+                <input
+                  type="number"
+                  placeholder="YY"
+                  name="card-year"
+                  maxlength="2"
+                  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                />
+                <input
+                  type="number"
+                  placeholder="e.g. 123"
+                  name="card-cvv"
+                  maxlength="3"
+                  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                />
+              </div>
+            </div>
+            <button type="submit" class="btnSubmit">Confirm</button>
+          </form>
+        </div>
+        <div class="bottom-thank-you-container hidden">
+          <img src="/images/icon-complete.svg" alt="" />
+          <h4>Thank You!</h4>
+          <span>We've added your card details</span>
+          <button class="btnSubmit">Continue</button>
+        </div>
       </section>
     </main>
   </body>
