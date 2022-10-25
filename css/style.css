@@ -50,7 +50,7 @@ main {
   .card-front {
     width: 80%;
     position: absolute;
-    top: 50%;
+    top: 40%;
     z-index: 2; }
     .card-front img {
       width: 100%; }
