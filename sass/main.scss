@@ -13,6 +13,10 @@ $Very-dark-violet: hsl(278, 68%, 11%);
   box-sizing: border-box;
 }
 
+.hidden {
+  display: none;
+}
+
 html {
   font-size: 62.5%;
 
@@ -115,7 +119,10 @@ main {
         display: flex;
         align-items: center;
         justify-content: space-between;
-
+        .card-front-cardholder-name {
+          letter-spacing: 0.2rem;
+          text-transform: uppercase;
+        }
         .card-front-card-month {
           margin-left: auto;
         }
@@ -157,10 +164,30 @@ main {
   margin: 0 1rem;
 
   .input-card-details {
+    margin-top: 1rem;
     form {
       display: flex;
       flex-direction: column;
       gap: 1rem;
+
+      .form-group {
+        margin-bottom: 1rem;
+        position: relative;
+
+        .error {
+          position: absolute;
+          bottom: -1.5rem;
+          color: $Red-input-errors;
+        }
+
+        .error:nth-child(4) {
+          left: 30%;
+        }
+
+        .error:last-child {
+          left: 60%;
+        }
+      }
 
       label {
         display: block;
@@ -176,11 +203,17 @@ main {
         padding: 1rem 0;
         border: 0.1px solid gray;
         border-radius: 1rem;
+        padding-left: 1rem;
+        outline: none;
         &::placeholder {
           color: $Light-grayish-violet;
           font-size: 1.8rem;
           font-weight: 500;
           padding-left: 1rem;
+        }
+
+        &:focus {
+          border: 0.2rem solid rebeccapurple;
         }
       }
 
@@ -203,7 +236,6 @@ main {
         }
       }
     }
-    // display: none;
   }
 
   .card-saved {
@@ -239,6 +271,8 @@ main {
         background-color: rgba($Very-dark-violet, $alpha: 0.5);
       }
     }
+  }
+  .hidden {
     display: none;
   }
 }
