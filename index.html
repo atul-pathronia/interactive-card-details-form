@@ -52,25 +52,47 @@
                   type="text"
                   name="cardholder-name"
                   placeholder="e.g. Jane Appleseed"
+                  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                  maxlength="25"
                 />
               </div>
               <div class="form-group">
                 <label>card name</label>
                 <input
-                  type="text"
                   name="card-number"
                   placeholder="e.g. 1234 5678 9123 0000"
+                  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                  type="number"
+                  maxlength="16"
                 />
               </div>
               <div class="form-group">
                 <label>EXP. DATE (MM/YY) CVV</label>
                 <div class="form-group-multi-input">
-                  <input type="text" placeholder="MM" name="card-month" />
-                  <input type="text" placeholder="YY" name="card-year" />
-                  <input type="text" placeholder="e.g. 123" name="card-cvv" />
+                  <input
+                    placeholder="MM"
+                    name="card-month"
+                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                    type="number"
+                    maxlength="2"
+                  />
+                  <input
+                    placeholder="YY"
+                    name="card-year"
+                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                    type="number"
+                    maxlength="2"
+                  />
+                  <input
+                    placeholder="e.g. 123"
+                    name="card-cvv"
+                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                    type="number"
+                    maxlength="3"
+                  />
                 </div>
               </div>
-              <button class="btn submitBtn">Confirm</button>
+              <button class="btn submitBtn" type="submit">Confirm</button>
             </form>
           </div>
           <div class="card-saved hidden">

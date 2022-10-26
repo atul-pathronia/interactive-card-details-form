@@ -19,6 +19,7 @@ $Very-dark-violet: hsl(278, 68%, 11%);
 
 html {
   font-size: 62.5%;
+  overflow: hidden;
 
   @media (min-width: 321px) {
     font-size: 68.75%;
@@ -39,18 +40,22 @@ html {
 
 body {
   font-family: "Space Grotesk", sans-serif;
-  min-height: 100vh;
+  height: 100vh;
 }
 
 main {
-  min-height: 100vh;
+  height: 100%;
 }
 
 .container {
   display: grid;
   grid-template-rows: 1fr 2fr;
-  min-height: 100vh;
+  height: 100vh;
   width: 100%;
+  @media (min-width: 576px) {
+    grid-template-columns: 1fr 2fr;
+    margin: 1rem auto;
+  }
 }
 
 .top {
@@ -59,6 +64,11 @@ main {
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
+
+  @media (min-width: 576px) {
+    background-image: url("/images/bg-main-desktop.png");
+    height: 100vh;
+  }
 }
 
 .card {
@@ -72,6 +82,10 @@ main {
     position: absolute;
     top: 40%;
     z-index: 2;
+    @media (min-width: 576px) {
+      left: 30%;
+      top: 20%;
+    }
     img {
       width: 100%;
     }
@@ -134,6 +148,10 @@ main {
     position: absolute;
     right: 1rem;
     z-index: 1;
+    @media (min-width: 576px) {
+      left: 50%;
+      top: 50%;
+    }
     img {
       width: 100%;
     }
@@ -169,10 +187,26 @@ main {
       display: flex;
       flex-direction: column;
       gap: 1rem;
+      @media (min-width: 576px) {
+        width: 80%;
+        align-items: center;
+        margin: 0 auto;
+      }
+      @media (min-width: 700px) {
+        width: 70%;
+        align-items: center;
+        margin: 0 auto;
+      }
+      @media (min-width: 900px) {
+        width: 50%;
+        align-items: center;
+        margin: 0 auto;
+      }
 
       .form-group {
         margin-bottom: 1rem;
         position: relative;
+        width: 100%;
 
         .error {
           position: absolute;
@@ -200,20 +234,19 @@ main {
 
       input {
         width: 100%;
-        padding: 1rem 0;
-        border: 0.1px solid gray;
+        padding: 1rem 0 1rem 1rem;
+        border: 0.2px solid gray;
         border-radius: 1rem;
-        padding-left: 1rem;
         outline: none;
         &::placeholder {
           color: $Light-grayish-violet;
           font-size: 1.8rem;
           font-weight: 500;
-          padding-left: 1rem;
+          text-align: left;
         }
 
         &:focus {
-          border: 0.2rem solid rebeccapurple;
+          border: 0.2px solid rebeccapurple;
         }
       }
 
@@ -231,6 +264,8 @@ main {
         border-radius: 1rem;
         font-size: 1.5rem;
         letter-spacing: 0.2rem;
+        width: 100%;
+        cursor: pointer;
         &:hover {
           background-color: rgba($Very-dark-violet, $alpha: 0.5);
         }
@@ -246,6 +281,21 @@ main {
     height: 100%;
     justify-content: center;
     gap: 2rem;
+    @media (min-width: 576px) {
+      width: 80%;
+      align-items: center;
+      margin: 0 auto;
+    }
+    @media (min-width: 700px) {
+      width: 70%;
+      align-items: center;
+      margin: 0 auto;
+    }
+    @media (min-width: 900px) {
+      width: 50%;
+      align-items: center;
+      margin: 0 auto;
+    }
 
     h2 {
       font-size: 2.5rem;
@@ -275,4 +325,10 @@ main {
   .hidden {
     display: none;
   }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
